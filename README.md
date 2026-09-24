@@ -1,28 +1,20 @@
-# RoundedFrameLayout
+# GradientStrokeFrameLayout
 
-Thư viện Android nhỏ gọn để tạo `FrameLayout` bo góc, có màu nền và viền, đồng thời cắt nội dung theo đúng kích thước thật của view. Thư viện không thêm compatibility padding như `CardView`.
+An Android `FrameLayout` with a rounded gradient border and a transparent center.
 
-## Import trực tiếp bằng AAR
+## Features
 
-Sau khi chạy `./gradlew assembleRelease`, lấy file:
+- Three-color gradient stroke
+- Transparent center
+- Configurable stroke width and corner radius
+- Horizontal, vertical, or diagonal gradient
+- Optional rounded clipping for child views
+- Runtime configuration from Kotlin or Java
+- No third-party runtime dependencies
 
-```text
-build/outputs/aar/rounded-frame-layout-release.aar
-```
+## Install with JitPack
 
-Chép file vào thư mục `app/libs` của project cần sử dụng, rồi thêm dependency:
-
-```groovy
-dependencies {
-    implementation files('libs/rounded-frame-layout-release.aar')
-}
-```
-
-## Cài bằng JitPack
-
-Đẩy thư mục này thành một repository GitHub có tên `rounded-frame-layout`, sau đó tạo tag, ví dụ `1.0.0`.
-
-Thêm JitPack vào `settings.gradle` của ứng dụng:
+Add JitPack to `settings.gradle`:
 
 ```groovy
 dependencyResolutionManagement {
@@ -34,56 +26,75 @@ dependencyResolutionManagement {
 }
 ```
 
-Thêm dependency, thay `YOUR_GITHUB_USERNAME` bằng tên tài khoản GitHub:
+Add the dependency to the app module:
 
 ```groovy
 dependencies {
-    implementation 'com.github.YOUR_GITHUB_USERNAME:rounded-frame-layout:1.0.0'
+    implementation 'com.github.lehongquyme:GradientStrokeFrameLayout:1.0.0'
 }
 ```
 
-## Cài bằng Maven Local
-
-Trong project thư viện, chạy:
-
-```bash
-./gradlew publishToMavenLocal
-```
-
-Trong project ứng dụng, thêm `mavenLocal()` vào repositories và dependency:
-
-```groovy
-implementation 'com.quylh.ui:rounded-frame-layout:1.0.0'
-```
-
-## Sử dụng trong XML
-
-```xml
-<com.quylh.roundedframelayout.RoundedFrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/roundedContainer"
-    android:layout_width="120dp"
-    android:layout_height="120dp"
-    app:roundedBackgroundColor="@android:color/white"
-    app:roundedCornerRadius="16dp"
-    app:roundedStrokeColor="@android:color/black"
-    app:roundedStrokeWidth="2dp">
-
-    <!-- Nội dung của bạn -->
-
-</com.quylh.roundedframelayout.RoundedFrameLayout>
-```
-
-## Sử dụng bằng Kotlin
+For Kotlin DSL:
 
 ```kotlin
-import com.quylh.roundedframelayout.RoundedFrameLayout
-
-roundedContainer.setStrokeColor(Color.RED)
-roundedContainer.setStroke(resources.getDimensionPixelSize(R.dimen.stroke_width), Color.BLUE)
-roundedContainer.setCornerRadius(resources.getDimension(R.dimen.corner_radius))
-roundedContainer.setFillColor(Color.WHITE)
+implementation("com.github.lehongquyme:GradientStrokeFrameLayout:1.0.0")
 ```
 
-`setCornerRadius()` và `setStrokeWidth()` nhận giá trị pixel. Khi lấy từ resource, hãy dùng `getDimension()` hoặc `getDimensionPixelSize()` như ví dụ trên.
+## XML usage
+
+```xml
+<com.quylh.gradientstrokelayout.GradientStrokeFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    app:gslStrokeWidth="2dp"
+    app:gslCornerRadius="14dp"
+    app:gslStartColor="#FABB73"
+    app:gslCenterColor="#FFA750"
+    app:gslEndColor="#D27433"
+    app:gslOrientation="topToBottom"
+    app:gslClipContent="true">
+
+    <!-- Your content. The layout itself does not fill the center. -->
+
+</com.quylh.gradientstrokelayout.GradientStrokeFrameLayout>
+```
+
+## Kotlin usage
+
+```kotlin
+binding.gradientFrame.apply {
+    setGradientStrokeWidth(2f * resources.displayMetrics.density)
+    setGradientCornerRadius(14f * resources.displayMetrics.density)
+    setGradientColors(
+        Color.parseColor("#FABB73"),
+        Color.parseColor("#FFA750"),
+        Color.parseColor("#D27433")
+    )
+    setGradientOrientation(
+        GradientStrokeFrameLayout.Orientation.TOP_TO_BOTTOM
+    )
+}
+```
+
+## Publish on JitPack
+
+1. Create a GitHub repository named `GradientStrokeFrameLayout`.
+2. Push this project to the repository's root directory.
+3. Create and push a release tag:
+
+```bash
+git tag 1.0.0
+git push origin 1.0.0
+```
+
+4. Open `https://jitpack.io/#lehongquyme/GradientStrokeFrameLayout/1.0.0` and click **Get it**.
+5. Use the dependency shown above after the JitPack build succeeds.
+
+If the GitHub repository name changes, replace `GradientStrokeFrameLayout` in the
+dependency coordinate and in `artifactId` inside `library/build.gradle`.
+
+## License
+
+MIT License. See [LICENSE](LICENSE).

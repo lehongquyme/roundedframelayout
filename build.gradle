@@ -1,0 +1,7 @@
+plugins {
+    id 'com.android.library' version '8.12.1' apply false
+    id 'org.jetbrains.kotlin.android' version '2.1.0' apply false
+}
+
+group = 'com.github.lehongquyme'
+version = System.getenv('VERSION') ?: providers.gradleProperty('version').getOrElse('1.0.1')
