@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.github.lehongquyme",
+    "module": "GradientStrokeFrameLayout",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.13"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "GradientStrokeFrameLayout-1.0.1.aar",
+          "url": "GradientStrokeFrameLayout-1.0.1.aar",
+          "size": 10003,
+          "sha512": "d0488a7e11c4e028d0ffa0b3104b70ae4951c60c898788e9195397356af28517de51ae364dde4d24007ba45b8730cc87952404093d6d7ffd1fa7f8ba8716c5d4",
+          "sha256": "2dcf7dbd443f896952aa578c446bde01e0e85ffbf4bdbf0b75abceb97741864e",
+          "sha1": "777f0069093f09bfef2471ea00cbf9e4ee138664",
+          "md5": "d88c55ae3b4d7003e527a5aebccdb71b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "GradientStrokeFrameLayout-1.0.1.aar",
+          "url": "GradientStrokeFrameLayout-1.0.1.aar",
+          "size": 10003,
+          "sha512": "d0488a7e11c4e028d0ffa0b3104b70ae4951c60c898788e9195397356af28517de51ae364dde4d24007ba45b8730cc87952404093d6d7ffd1fa7f8ba8716c5d4",
+          "sha256": "2dcf7dbd443f896952aa578c446bde01e0e85ffbf4bdbf0b75abceb97741864e",
+          "sha1": "777f0069093f09bfef2471ea00cbf9e4ee138664",
+          "md5": "d88c55ae3b4d7003e527a5aebccdb71b"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "GradientStrokeFrameLayout-1.0.1-sources.jar",
+          "url": "GradientStrokeFrameLayout-1.0.1-sources.jar",
+          "size": 2626,
+          "sha512": "c548dfb01dc5f53addebae20cec4fe24219e4f747c8fd85ef2125fb5d7641e6d67cd2be95bf504f425064667b63390a25a217fe2d2a310aebb617211e0581f84",
+          "sha256": "62622c7e86369fb436ca04ff765e215486631150f484a775b21a9d2d55dbb4dc",
+          "sha1": "65da56171f83aa17e3f64f31a04e6e7340a2a652",
+          "md5": "be5f3b03a1b05e52f495be53d4986e30"
+        }
+      ]
+    }
+  ]
+}

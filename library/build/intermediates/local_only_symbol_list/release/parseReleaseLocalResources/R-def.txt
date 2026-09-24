@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+attr? gslCenterColor
+attr? gslClipContent
+attr? gslCornerRadius
+attr? gslEndColor
+attr? gslOrientation
+attr? gslStartColor
+attr? gslStrokeWidth
+id diagonal
+id leftToRight
+id topToBottom
+styleable GradientStrokeFrameLayout gslStrokeWidth gslCornerRadius gslStartColor gslCenterColor gslEndColor gslOrientation gslClipContent

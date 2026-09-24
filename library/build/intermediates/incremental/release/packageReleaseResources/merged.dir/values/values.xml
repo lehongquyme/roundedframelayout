@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GradientStrokeFrameLayout">
+        <attr format="dimension" name="gslStrokeWidth"/>
+        <attr format="dimension" name="gslCornerRadius"/>
+        <attr format="color" name="gslStartColor"/>
+        <attr format="color" name="gslCenterColor"/>
+        <attr format="color" name="gslEndColor"/>
+        <attr name="gslOrientation">
+            <enum name="leftToRight" value="0"/>
+            <enum name="topToBottom" value="1"/>
+            <enum name="diagonal" value="2"/>
+        </attr>
+        <attr format="boolean" name="gslClipContent"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,12 @@
+com.quylh.gradientstrokelayout
+attr gslCenterColor
+attr gslClipContent
+attr gslCornerRadius
+attr gslEndColor
+attr gslOrientation
+attr gslStartColor
+attr gslStrokeWidth
+id diagonal
+id leftToRight
+id topToBottom
+styleable GradientStrokeFrameLayout gslCenterColor gslClipContent gslCornerRadius gslEndColor gslOrientation gslStartColor gslStrokeWidth
